@@ -73,7 +73,7 @@ def main():
         accelerator=accelerator,
         max_epochs=config.training.max_epochs,
         logger=mlf_logger,
-         default_root_dir=str(output_root_dir),
+        default_root_dir=str(output_root_dir),
         callbacks=[checkpoint_callback],
         log_every_n_steps=5,
     )
