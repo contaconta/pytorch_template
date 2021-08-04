@@ -62,9 +62,9 @@ def main():
     checkpoint_callback = ModelCheckpoint(
         dirpath=str(output_root_dir / config.experiment_name / "checkpoints"),
         filename="checkpoint-{epoch:02d}-{val_loss:.2f}",
-        save_top_k=1,
+        save_top_k=3,
         verbose=True,
-        monitor="val_acc_top1",
+        monitor="val_acc",
         mode="max",
     )
 
@@ -73,6 +73,7 @@ def main():
         accelerator=accelerator,
         max_epochs=config.training.max_epochs,
         logger=mlf_logger,
+         default_root_dir=str(output_root_dir),
         callbacks=[checkpoint_callback],
         log_every_n_steps=5,
     )
