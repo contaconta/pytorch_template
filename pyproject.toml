@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "wavelet_vit"
+version = "0.1.0"
+description = ""
+authors = ["contaconta <conta1031@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.10"
+omegaconf = "^2.1.0"
+torch = "^1.9.0"
+torchvision = "^0.10.0"
+pytorch-lightning = "^1.4.1"
+scipy = "^1.7.1"
+timm = "^0.4.12"
+tqdm = "^4.62.0"
+mlflow = "^1.19.0"
+torchmetrics = "^0.4.1"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^21.7b0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
